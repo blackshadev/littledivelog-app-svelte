@@ -16,5 +16,5 @@
 </main>
 
 <style global>
-    @import-normalize;
+    @import 'normalize.css';
 </style>
