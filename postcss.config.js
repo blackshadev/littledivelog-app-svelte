@@ -1,20 +1,22 @@
-// import nesting from "postcss-nesting";
-// import postcssimport from "postcss-import";
-
 const production = !process.env.ROLLUP_WATCH;
 
 module.exports = {
-    //   syntax: "postcss-scss",
+    syntax: 'postcss-scss',
+
     plugins: [
-        // nesting(),
-        // postcssimport(),
+        require('postcss-import'),
+        require('postcss-autoreset')('sizes'),
+        require('postcss-normalize')(),
+        require('tailwindcss/nesting')(require('postcss-nesting')),
         require('tailwindcss'),
         require('autoprefixer'),
+        require('postcss-preset-env')({
+            features: { 'nesting-rules': false },
+        }),
+        production &&
+            require('purgecss')({
+                content: ['./**/*.html', './**/*.svelte'],
+                defaultExtractor: (content) => content.match(/[A-Za-z0-9-_:/]+/g) || [],
+            }),
     ],
-    //     production &&
-    //       purgecss({
-    //         content: ["./**/*.html", "./**/*.svelte"],
-    //         defaultExtractor: (content) => content.match(/[A-Za-z0-9-_:/]+/g) || [],
-    //       }),
-    //   ],
 };
