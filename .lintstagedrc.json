@@ -1,0 +1,5 @@
+{
+    "*.(ts|js)": ["eslint --fix", "prettier -w"],
+    "*.svelte": ["eslint --fix", "stylelint --fix", "prettier -w"],
+    "*.(html|json)": "prettier -w"
+}
