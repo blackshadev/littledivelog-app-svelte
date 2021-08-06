@@ -33,11 +33,8 @@
 </form>
 
 <style lang="scss">
-    @import '../styling/colors.scss';
-
     form {
-        border-color: $light-grey;
-        @apply mx-auto max-w-lg rounded border border-solid p-10;
+        @apply mx-auto max-w-lg rounded border border-solid p-10 border-light-gray;
     }
 
     .message {

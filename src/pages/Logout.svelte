@@ -4,7 +4,7 @@
     import * as auth from '../api/auth';
     import ErrorComponent from '../components/Form/Error.svelte';
     import Routes from '../routing/routes';
-    import { getRefreshToken } from '../stores/auth';
+    import { getRefreshToken, reset } from '../stores/auth';
     import getStoreValue from '../stores/getStoreValue';
 
     const refreshToken = getStoreValue(getRefreshToken);
@@ -25,6 +25,8 @@
         } catch {
             /* Ignore errors */
         }
+
+        reset();
     }
 
     function handleError(err: unknown) {

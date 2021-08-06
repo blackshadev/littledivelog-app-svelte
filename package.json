@@ -9,7 +9,7 @@
         "lint": "concurrently \"svelte-check --tsconfig ./tsconfig.json\" \"prettier -c .\" \"eslint src\" \"stylelint src/**/*.{css,scss,svelte}\"",
         "lint:fix": "concurrently \"eslint --fix src\" \"stylelint --fix src/**/*.{css,scss,svelte}\" && prettier --write .",
         "prepare": "husky install",
-        "pre-commit": "lint-staged && svelte-check --tsconfig ./tsconfig.json"
+        "pre-commit": "lint-staged && svelte-check --tsconfig ./tsconfig.json --diagnostic-sources=js,svelte"
     },
     "devDependencies": {
         "@rollup/plugin-alias": "^3.1.5",
@@ -60,6 +60,7 @@
     "dependencies": {
         "@types/axios": "^0.14.0",
         "axios": "^0.21.1",
+        "dayjs": "^1.10.6",
         "sirv-cli": "^1.0.0"
     },
     "browserslist": "last 2 versions"

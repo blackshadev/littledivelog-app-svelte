@@ -15,19 +15,21 @@
     <li><a href={routes.Home} use:link>Home</a></li>
     <li><a href={routes.About} use:link>About</a></li>
 
-    {#if !isLoggedIn}<li><a href={routes.Login} use:link>Login</a></li>{/if}
-    {#if isLoggedIn}<li><a href={routes.Logout} use:link>Logout</a></li>{/if}
+    {#if !isLoggedIn}
+        <li><a href={routes.Login} use:link>Login</a></li>
+    {/if}
+    {#if isLoggedIn}
+        <li><a href={routes.Dives} use:link>Dives</a></li>
+        <li><a href={routes.Logout} use:link>Logout</a></li>
+    {/if}
 </ul>
 
 <style lang="scss">
-    @import '../../../styling/colors.scss';
-
     ul {
         list-style: none;
     }
     a {
-        color: $background;
-        @apply block px-4 py-2 no-underline w-full;
+        @apply text-background block px-4 py-2 no-underline w-full;
 
         &:hover {
             @apply underline;

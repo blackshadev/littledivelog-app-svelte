@@ -1,6 +1,9 @@
-$highlight: #818CF8;
-$accent: #6366F1;
-$background: #ffffff;
-$foreground: #000000;
-$grey: #64748B;
-$light-grey: #CBD5E1;
+:root {
+    --highlight: #818CF8;
+    --accent: #6366F1;
+    --background: #F8FAFC;
+    --foreground: #000000;
+    --gray: #64748B;
+    --light-gray: #CBD5E1;
+    --hover: #F1F5F9;
+}

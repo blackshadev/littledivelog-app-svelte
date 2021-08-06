@@ -8,6 +8,7 @@
     @import './styling/all.scss';
 
     body {
+        @apply bg-background;
         @apply font-sans;
         @apply absolute inset-0;
         @apply p-0 w-full h-full;

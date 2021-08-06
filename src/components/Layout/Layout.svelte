@@ -13,19 +13,16 @@
 </div>
 
 <style lang="scss">
-    @import '../../styling/colors.scss';
-
     div {
         @apply flex flex-row w-full h-full;
 
         nav {
-            background-color: $accent;
-            color: $background;
-            @apply w-32 h-full;
+            @apply w-32 h-full fixed;
+            @apply bg-accent text-background;
         }
 
         main {
-            @apply flex-grow p-4;
+            @apply absolute flex-grow p-4 left-32 inset-0;
         }
     }
 </style>

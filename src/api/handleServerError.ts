@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import axios from 'axios';
+import { AuthException } from './auth';
 import { FieldsError } from './errors/fieldError';
 
 export default async function handleServerError<T>(result: Promise<T>): Promise<T> {
@@ -7,6 +8,10 @@ export default async function handleServerError<T>(result: Promise<T>): Promise<
         return await result;
     } catch (err) {
         if (axios.isAxiosError(err) && err.response) {
+            if (err.response.status === 401) {
+                throw new AuthException();
+            }
+
             if (typeof err.response.data !== 'object') {
                 throw err;
             }

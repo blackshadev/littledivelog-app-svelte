@@ -8,7 +8,17 @@ module.exports = {
     },
     darkMode: false, // or 'media' or 'class'
     theme: {
-        extend: {},
+        extend: {
+            colors: {
+                highlight: 'var(--highlight)',
+                accent: 'var(--accent)',
+                background: 'var(--background)',
+                foreground: 'var(--foreground)',
+                gray: 'var(--gray)',
+                'light-gray': 'var(--light-gray)',
+                hover: 'var(--hover)',
+            },
+        },
     },
     variants: {
         extend: {},

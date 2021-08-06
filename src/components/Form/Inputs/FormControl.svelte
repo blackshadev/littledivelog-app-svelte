@@ -24,25 +24,24 @@
 </p>
 
 <style lang="scss">
-    @import '../../../styling/colors.scss';
-
     p {
         margin-top: -0.5rem;
         @apply mb-4 block;
 
         label {
-            background: $background;
-            color: $grey;
             @apply px-1 ml-2;
             @apply relative top-2;
+            @apply bg-background text-gray;
         }
 
         input {
-            border-color: $grey;
             @apply border border-solid rounded;
             @apply w-full;
             @apply py-3 px-4;
             @apply box-border;
+            @apply border-gray;
+
+            background: var(--background) !important;
 
             &:focus {
                 outline: 0;
@@ -51,10 +50,10 @@
 
         &.--focussed {
             label {
-                color: $highlight;
+                @apply text-highlight;
             }
             input {
-                border-color: $highlight;
+                @apply border-highlight;
             }
         }
     }

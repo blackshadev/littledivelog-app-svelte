@@ -8,7 +8,7 @@
     <span class="test">test</span>
 </main>
 
-<style lang="scss">
+<style lang="postcss">
     main {
         text-align: center;
         padding: 1em;

@@ -3,6 +3,7 @@
     import type { WrappedComponent } from 'svelte-spa-router';
 
     import Router from 'svelte-spa-router';
+    import Dives from '../pages/Dives.svelte';
     import Home from '../pages/Home.svelte';
     import Login from '../pages/Login.svelte';
     import Logout from '../pages/Logout.svelte';
@@ -13,6 +14,7 @@
         [Routes.Home]: Home,
         [Routes.Login]: Login,
         [Routes.Logout]: Logout,
+        [Routes.Dives]: Dives,
         '*': NotFound,
     };
 </script>
