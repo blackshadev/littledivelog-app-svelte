@@ -1,20 +1,15 @@
 <script lang="ts">
-    import Router from 'svelte-spa-router';
-    import Home from './Home.svelte';
-    import Navigation from './Navigation.svelte';
-    import NotFound from './NotFound.svelte';
-
-    const routes = {
-        '/:name?': Home,
-        '*': NotFound,
-    };
+    import Layout from './components/Layout/Layout.svelte';
 </script>
 
-<Navigation />
-<main>
-    <Router {routes} />
-</main>
+<Layout />
 
-<style global>
-    @import 'normalize.css';
+<style lang="scss" global>
+    @import './styling/all.scss';
+
+    body {
+        @apply font-sans;
+        @apply absolute inset-0;
+        @apply p-0 w-full h-full;
+    }
 </style>

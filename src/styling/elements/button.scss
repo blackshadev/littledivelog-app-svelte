@@ -1,0 +1,19 @@
+@import "../colors.scss";
+
+button {
+    $color: $accent;
+
+    &:focus {
+        color: $highlight;
+        border-color: $highlight;
+        @apply underline;
+    }
+
+    color: $color;
+    border-color: $color;
+    background: $background;
+
+    @apply outline-none rounded border-solid border p-2 px-4 mr-2;
+
+    
+}

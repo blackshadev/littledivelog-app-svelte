@@ -12,8 +12,10 @@
         "pre-commit": "lint-staged && svelte-check --tsconfig ./tsconfig.json"
     },
     "devDependencies": {
+        "@rollup/plugin-alias": "^3.1.5",
         "@rollup/plugin-commonjs": "^17.0.0",
         "@rollup/plugin-node-resolve": "^11.0.0",
+        "@rollup/plugin-replace": "^3.0.0",
         "@rollup/plugin-typescript": "^8.0.0",
         "@tsconfig/svelte": "^2.0.0",
         "@typescript-eslint/eslint-plugin": "^4.29.0",
@@ -56,6 +58,8 @@
         "typescript": "^4.0.0"
     },
     "dependencies": {
+        "@types/axios": "^0.14.0",
+        "axios": "^0.21.1",
         "sirv-cli": "^1.0.0"
     },
     "browserslist": "last 2 versions"

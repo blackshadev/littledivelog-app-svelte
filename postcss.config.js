@@ -5,7 +5,13 @@ module.exports = {
 
     plugins: [
         require('postcss-import'),
-        require('postcss-autoreset')('sizes'),
+        require('postcss-autoreset')({
+            reset: {
+                margin: 0,
+                padding: 0,
+                borderRadius: 0,
+            },
+        }),
         require('postcss-normalize')(),
         require('tailwindcss/nesting')(require('postcss-nesting')),
         require('tailwindcss'),

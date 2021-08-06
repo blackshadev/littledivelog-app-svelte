@@ -6,6 +6,9 @@ import { terser } from 'rollup-plugin-terser';
 import sveltePreprocess from 'svelte-preprocess';
 import typescript from '@rollup/plugin-typescript';
 import css from 'rollup-plugin-css-only';
+import alias from '@rollup/plugin-alias';
+import path from 'path';
+import replace from '@rollup/plugin-replace';
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -30,6 +33,8 @@ function serve() {
     };
 }
 
+const projectRootDir = path.resolve(__dirname);
+
 export default {
     input: 'src/main.ts',
     output: {
@@ -39,10 +44,26 @@ export default {
         file: 'public/build/bundle.js',
     },
     plugins: [
+        alias({
+            entries: [
+                { find: '@pages', replacement: `${projectRootDir}/src/pages` },
+                { find: '@components', replacement: `${projectRootDir}/src/components` },
+                { find: '@styling', replacement: `${projectRootDir}/src/styling` },
+                { find: '@root', replacement: `${projectRootDir}/src/` },
+                { find: '@routing', replacement: `${projectRootDir}/src/routing` },
+            ],
+        }),
+        replace({
+            preventAssignment: true,
+            values: {
+                'process.env.isProd': production,
+            },
+        }),
         svelte({
             preprocess: sveltePreprocess({
                 sourceMap: !production,
                 postcss: true,
+                scss: true,
             }),
             compilerOptions: {
                 // enable run-time checks when not in production

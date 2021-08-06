@@ -1,0 +1,11 @@
+@import "../colors.scss";
+
+a {
+    color: $highlight;
+    @apply outline-none no-underline cursor-pointer;
+
+    &:focus {
+        @apply underline;
+    }
+
+}
