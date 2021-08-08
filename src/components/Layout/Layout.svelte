@@ -13,16 +13,31 @@
 </div>
 
 <style lang="scss">
+    @import '../../styling/constants/all.scss';
     div {
-        @apply flex flex-row w-full h-full;
+        $nav-size: 8rem;
+
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
 
         nav {
-            @apply w-32 h-full fixed;
-            @apply bg-accent text-background;
+            position: fixed;
+            width: $nav-size;
+            height: 100%;
+            background-color: var(--accent);
+            color: var(--background);
         }
 
         main {
-            @apply absolute flex-grow p-4 left-32 inset-0;
+            position: absolute;
+            flex-grow: 1;
+            left: $nav-size;
+            min-height: 100%;
+            top: 0;
+            right: 0;
+            padding: $space-md;
         }
     }
 </style>

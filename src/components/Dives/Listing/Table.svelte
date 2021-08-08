@@ -24,27 +24,34 @@
 </table>
 
 <style lang="scss">
+    @import '../../../styling/constants/all.scss';
+
     table {
-        @apply w-full border-collapse;
+        width: 100%;
+        border-collapse: collapse;
 
         thead {
             th {
-                @apply text-left;
-                @apply py-5;
+                text-align: left;
+                padding-top: $space-lg;
+                padding-bottom: $space-lg;
             }
         }
 
         thead th,
         tbody td {
-            @apply border-0 border-b border-light-gray border-solid px-2;
+            border: 0;
+            border-bottom: 1px solid var(--light-gray);
+            padding-left: $space-sm;
+            padding-right: $space-sm;
         }
 
         tbody td {
-            @apply py-4;
+            padding: $space-md 0;
         }
 
         tbody tr:hover td {
-            @apply bg-hover;
+            background: var(--hover);
         }
     }
 </style>

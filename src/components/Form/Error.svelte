@@ -8,6 +8,6 @@
 
 <style lang="scss">
     p {
-        @apply text-red-500;
+        color: var(--error);
     }
 </style>

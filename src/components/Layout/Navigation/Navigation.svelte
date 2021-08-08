@@ -25,14 +25,20 @@
 </ul>
 
 <style lang="scss">
+    @import '../../../styling/constants/all.scss';
     ul {
         list-style: none;
     }
+
     a {
-        @apply text-background block px-4 py-2 no-underline w-full;
+        color: var(--background);
+        display: block;
+        padding: $space-sm $space-md;
+        text-decoration: none;
+        width: 100%;
 
         &:hover {
-            @apply underline;
+            text-decoration: underline;
         }
     }
 </style>

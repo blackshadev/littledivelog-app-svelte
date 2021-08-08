@@ -62,10 +62,7 @@ export default {
         svelte({
             preprocess: sveltePreprocess({
                 sourceMap: !production,
-                postcss: true,
-                defaults: {
-                    style: 'postcss',
-                },
+                scss: true,
             }),
             compilerOptions: {
                 // enable run-time checks when not in production

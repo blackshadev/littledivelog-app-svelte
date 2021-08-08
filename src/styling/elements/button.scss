@@ -1,10 +1,19 @@
 button {
     &:focus {
-        @apply text-highlight border-highlight underline;
+        color: var(--highlight);
+        border-color: var(--highlight);
+        text-decoration: underline;
+    }
+    &:hover {
+        color: var(--highlight);
+        border-color: var(--highlight);
     }
 
-    @apply outline-none rounded border-solid border p-2 px-4 mr-2;
-    @apply bg-background border-accent text-accent;
-
-    
+    outline: 0;
+    border-radius: $rounded;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: $space-sm $space-md;
+    margin-right: $space-sm $space-md;
+    background: transparent;
 }

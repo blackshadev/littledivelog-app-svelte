@@ -7,7 +7,10 @@
 </p>
 
 <style lang="scss">
+    @import '../styling/constants/all.scss';
+
     p {
-        @apply text-lg;
+        font-size: $text-lg;
+        line-height: $line-lg;
     }
 </style>

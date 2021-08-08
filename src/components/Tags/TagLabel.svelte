@@ -9,8 +9,12 @@
 <span style={`--background:${tag.color};--foreground:${getBestFontColor(tag.color)};`}>{tag.text}</span>
 
 <style lang="scss">
+    @import '../../styling/constants/all.scss';
     span {
-        @apply bg-background text-foreground;
-        @apply rounded px-2 py-1 mr-2;
+        background-color: var(--background);
+        color: var(--foreground);
+        border-radius: $rounded;
+        padding: $space-xs $space-sm;
+        margin-right: $space-sm;
     }
 </style>

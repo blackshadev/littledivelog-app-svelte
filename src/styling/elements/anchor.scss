@@ -1,8 +1,11 @@
 a {
-    @apply text-highlight outline-none no-underline cursor-pointer;
+    color: var(--highlight);
+    outline: 0;
+    text-decoration: none;
+    cursor: pointer;
 
     &:focus {
-        @apply underline;
+        text-decoration: underline;
     }
 
 }

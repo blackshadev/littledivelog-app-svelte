@@ -8,9 +8,12 @@
     @import './styling/all.scss';
 
     body {
-        @apply bg-background;
-        @apply font-sans;
-        @apply absolute inset-0;
-        @apply p-0 w-full h-full;
+        background: var(--background);
+        font-family: Helvetica, Arial, sans-serif;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        min-height: 100%;
     }
 </style>

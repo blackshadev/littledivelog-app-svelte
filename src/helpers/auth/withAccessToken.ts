@@ -1,7 +1,7 @@
-import { AuthException } from '../../api/auth';
 import { getAccessToken, getRefreshToken, setAccessToken } from '../../stores/auth';
 import getStoreValue from '../../stores/getStoreValue';
 import * as auth from '../../api/auth';
+import AuthenticationError from '../../api/errors/AuthenticationError';
 
 export async function withAccessToken<T extends unknown[], R>(
     fn: (token: string, ...args: T[]) => Promise<R>,
@@ -16,7 +16,7 @@ export async function withAccessToken<T extends unknown[], R>(
     try {
         return await fn(accessToken, ...args);
     } catch (err) {
-        if (err instanceof AuthException) {
+        if (err instanceof AuthenticationError) {
             accessToken = await refreshAccessToken(refreshToken);
             return await fn(accessToken, ...args);
         }

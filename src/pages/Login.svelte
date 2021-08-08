@@ -33,11 +33,18 @@
 </form>
 
 <style lang="scss">
+    @import '../styling/constants/all.scss';
+
     form {
-        @apply mx-auto max-w-lg rounded border border-solid p-10 border-light-gray;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: $max-lg;
+        border-radius: $rounded;
+        border: 1px solid var(--light-grey);
+        padding: $space-2xl;
     }
 
     .message {
-        @apply mb-4;
+        margin-bottom: $space-md;
     }
 </style>

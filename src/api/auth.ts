@@ -35,5 +35,3 @@ export function withAuthorizationToken(token: string): { Authorization: string }
         Authorization: 'Bearer ' + token,
     };
 }
-
-export class AuthException extends Error {}

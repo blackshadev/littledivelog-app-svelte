@@ -24,23 +24,29 @@
 </p>
 
 <style lang="scss">
+    @import '../../../styling/constants/all.scss';
+
     p {
         margin-top: -0.5rem;
-        @apply mb-4 block;
+        margin-bottom: $space-md;
+        display: block;
 
         label {
-            @apply px-1 ml-2;
-            @apply relative top-2;
-            @apply bg-background text-gray;
+            position: relative;
+            top: $space-sm;
+            padding: 0 $space-xs;
+            margin-left: $space-sm;
+            background: var(--background);
+            color: var(--gray);
         }
 
         input {
-            @apply border border-solid rounded;
-            @apply w-full;
-            @apply py-3 px-4;
-            @apply box-border;
-            @apply border-gray;
+            border: 1px solid var(--gray);
+            border-radius: $rounded;
+            width: 100%;
 
+            /* padding: $space-md $space */
+            padding: $space-md - $space-xs $space-md;
             background: var(--background) !important;
 
             &:focus {
@@ -50,10 +56,10 @@
 
         &.--focussed {
             label {
-                @apply text-highlight;
+                color: var(--highlight);
             }
             input {
-                @apply border-highlight;
+                border-color: var(--highlight);
             }
         }
     }
