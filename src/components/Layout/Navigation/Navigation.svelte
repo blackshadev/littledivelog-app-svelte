@@ -12,13 +12,13 @@
 </script>
 
 <ul>
-    <li><a href={routes.Home} use:link>Home</a></li>
     <li><a href={routes.About} use:link>About</a></li>
 
     {#if !isLoggedIn}
         <li><a href={routes.Login} use:link>Login</a></li>
     {/if}
     {#if isLoggedIn}
+        <li><a href={routes.Home} use:link>Home</a></li>
         <li><a href={routes.Dives} use:link>Dives</a></li>
         <li><a href={routes.Logout} use:link>Logout</a></li>
     {/if}

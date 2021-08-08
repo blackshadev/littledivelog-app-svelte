@@ -8,6 +8,7 @@
     import Login from '../pages/Login.svelte';
     import Logout from '../pages/Logout.svelte';
     import NotFound from '../pages/NotFound.svelte';
+    import Register from '../pages/Register.svelte';
     import Routes from './routes';
 
     export const routes: Record<string, typeof SvelteComponent | WrappedComponent> = {
@@ -15,6 +16,7 @@
         [Routes.Login]: Login,
         [Routes.Logout]: Logout,
         [Routes.Dives]: Dives,
+        [Routes.Register]: Register,
         '*': NotFound,
     };
 </script>

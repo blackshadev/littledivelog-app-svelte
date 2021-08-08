@@ -1,0 +1,20 @@
+h1,h2 {
+    font-weight: bold;
+    margin-bottom: $space-xl;
+}
+
+h1 {
+    font-size: $text-2xl;
+    line-height: $line-2xl;
+}
+
+h2 {
+    font-size: $text-xl;
+    line-height: $line-xl;
+}
+
+h3 {
+    font-size: $text-lg;
+    line-height: $line-lg;
+
+}
