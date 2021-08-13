@@ -9,7 +9,7 @@ export default async function handleServerError<T>(result: Promise<T>): Promise<
     } catch (err) {
         if (axios.isAxiosError(err) && err.response) {
             if (err.response.status === 401) {
-                throw new AuthenticationError();
+                throw new AuthenticationError(err.response.data?.message);
             }
 
             if (typeof err.response.data !== 'object') {

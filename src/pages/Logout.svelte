@@ -2,12 +2,11 @@
     import { replace } from 'svelte-spa-router';
 
     import * as auth from '../api/auth';
-    import ErrorComponent from '../components/Form/Error.svelte';
+    import ErrorComponent from '../components/Form/ErrorComponent.svelte';
     import Routes from '../routing/routes';
     import { getRefreshToken, reset } from '../stores/auth';
-    import getStoreValue from '../stores/getStoreValue';
 
-    const refreshToken = getStoreValue(getRefreshToken);
+    const refreshToken = $getRefreshToken;
 
     async function redirectToLogin(): Promise<void> {
         await replace(Routes.Login);
