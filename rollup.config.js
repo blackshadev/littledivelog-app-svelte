@@ -56,7 +56,7 @@ export default {
         replace({
             preventAssignment: true,
             values: {
-                'process.env.isProd': production,
+                process: JSON.stringify({ env: { isProd: production } }),
             },
         }),
         svelte({

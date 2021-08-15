@@ -1,10 +1,10 @@
 <script lang="ts">
     import { replace } from 'svelte-spa-router';
 
-    import * as auth from '../api/auth';
-    import ErrorComponent from '../components/Form/ErrorComponent.svelte';
-    import Routes from '../routing/routes';
-    import { getRefreshToken, reset } from '../stores/auth';
+    import * as auth from '../../../api/auth';
+    import ErrorComponent from '../../Form/ErrorComponent.svelte';
+    import Routes from '../../Router/routes';
+    import { getRefreshToken, reset } from '../../../stores/auth';
 
     const refreshToken = $getRefreshToken;
 

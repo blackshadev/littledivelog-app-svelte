@@ -17,6 +17,8 @@
         bind:value
         {name}
         {placeholder}
+        aria-label={name}
+        role="textbox"
         on:focus={() => (focussed = true)}
         on:blur={() => (focussed = false)}
         use:setType

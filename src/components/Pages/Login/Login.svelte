@@ -1,12 +1,11 @@
 <script lang="ts">
     import { link } from 'svelte-spa-router';
-    import FormControl from '../components/Form/Inputs/FormControl.svelte';
-    import routes from '../routing/routes';
-    import * as auth from '../api/auth';
-    import ErrorComponent from '../components/Form/ErrorComponent.svelte';
-    import { setTokens } from '../stores/auth';
+    import FormControl from '../../Form/Inputs/FormControl.svelte';
+    import ErrorComponent from '../../Form/ErrorComponent.svelte';
+    import routes from '../../Router/routes';
+    import * as auth from '../../../api/auth';
+    import { setTokens, getIsLoggedIn } from '../../../stores/auth';
     import { replace } from 'svelte-spa-router';
-    import { getIsLoggedIn } from '../stores/auth';
 
     let email: string;
     let password: string;
@@ -41,7 +40,7 @@
 </form>
 
 <style lang="scss">
-    @import '../styling/constants/all.scss';
+    @import '../../../styling/constants/all.scss';
 
     .message {
         margin-bottom: $space-md;

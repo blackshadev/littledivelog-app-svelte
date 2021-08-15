@@ -1,5 +1,5 @@
 import { getAccessToken, getRefreshToken, setAccessToken } from '../../stores/auth';
-import getStoreValue from '../../stores/getStoreValue';
+import { get } from 'svelte/store';
 import * as auth from '../../api/auth';
 import AuthenticationError from '../../api/errors/AuthenticationError';
 
@@ -7,8 +7,8 @@ export async function withAccessToken<T extends unknown[], R>(
     fn: (token: string, ...args: T[]) => Promise<R>,
     ...args: T[]
 ): Promise<R> {
-    let accessToken = getStoreValue(getAccessToken);
-    const refreshToken = getStoreValue(getRefreshToken);
+    let accessToken = get(getAccessToken);
+    const refreshToken = get(getRefreshToken);
     if (!accessToken || !refreshToken) {
         throw new Error('No refresh or access token');
     }

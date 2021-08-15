@@ -1,10 +1,10 @@
 <script type="ts">
-    import ErrorComponent from '../components/Form/ErrorComponent.svelte';
-    import FormControl from '../components/Form/Inputs/FormControl.svelte';
-    import * as auth from '../api/auth';
-    import { getIsLoggedIn, setTokens } from '../stores/auth';
+    import ErrorComponent from '../../Form/ErrorComponent.svelte';
+    import FormControl from '../../Form/Inputs/FormControl.svelte';
+    import * as auth from '../../../api/auth';
+    import { getIsLoggedIn, setTokens } from '../../../stores/auth';
     import { replace } from 'svelte-spa-router';
-    import routes from '../routing/routes';
+    import routes from '../../Router/routes';
 
     let email: string;
     let password: string;
