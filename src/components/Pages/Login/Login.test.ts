@@ -1,10 +1,11 @@
 import { render, screen } from '@testing-library/svelte';
 import userEvent from '@testing-library/user-event';
-import Login from './Login.svelte';
+import { get } from 'svelte/store';
+
 import { login } from '../../../api/auth';
 import AuthenticationError from '../../../api/errors/AuthenticationError';
-import { get } from 'svelte/store';
 import { getAccessToken, getIsLoggedIn, getRefreshToken } from '../../../stores/auth';
+import Login from './Login.svelte';
 
 jest.mock('../../../api/auth');
 const mockLogin = login as jest.MockedFunction<typeof login>;

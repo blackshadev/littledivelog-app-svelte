@@ -1,7 +1,8 @@
-import { getAccessToken, getRefreshToken, setAccessToken } from '../../stores/auth';
 import { get } from 'svelte/store';
+
 import * as auth from '../../api/auth';
 import AuthenticationError from '../../api/errors/AuthenticationError';
+import { getAccessToken, getRefreshToken, setAccessToken } from '../../stores/auth';
 
 export async function withAccessToken<T extends unknown[], R>(
     fn: (token: string, ...args: T[]) => Promise<R>,

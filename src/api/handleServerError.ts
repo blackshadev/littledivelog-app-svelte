@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import axios from 'axios';
+
 import AuthenticationError from './errors/AuthenticationError';
 import { FieldsError } from './errors/fieldError';
 

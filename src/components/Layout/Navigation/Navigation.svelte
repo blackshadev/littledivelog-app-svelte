@@ -1,7 +1,8 @@
 <script>
     import { link } from 'svelte-spa-router';
-    import routes from '../../Router/routes';
+
     import { getIsLoggedIn } from '../../../stores/auth';
+    import routes from '../../Router/routes';
 </script>
 
 <ul>

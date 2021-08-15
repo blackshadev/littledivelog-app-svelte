@@ -1,11 +1,10 @@
 <script lang="ts">
-    import { link } from 'svelte-spa-router';
+    import { link, replace } from 'svelte-spa-router';
     import FormControl from '../../Form/Inputs/FormControl.svelte';
     import ErrorComponent from '../../Form/ErrorComponent.svelte';
     import routes from '../../Router/routes';
     import * as auth from '../../../api/auth';
-    import { setTokens, getIsLoggedIn } from '../../../stores/auth';
-    import { replace } from 'svelte-spa-router';
+    import { getIsLoggedIn, setTokens } from '../../../stores/auth';
 
     let email: string;
     let password: string;

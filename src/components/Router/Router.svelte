@@ -1,7 +1,6 @@
 <script lang="ts">
     import type { SvelteComponent } from 'svelte';
     import type { WrappedComponent } from 'svelte-spa-router';
-
     import Router from 'svelte-spa-router';
     import Dives from '../Pages/Dives/Dives.svelte';
     import Home from '../Pages/Home/Home.svelte';
