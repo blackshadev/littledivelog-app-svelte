@@ -1,16 +1,22 @@
 import { render, screen } from '@testing-library/svelte';
 import userEvent from '@testing-library/user-event';
+import { tick } from 'svelte';
 import { get } from 'svelte/store';
-
 import { login } from '../../../api/auth';
 import AuthenticationError from '../../../api/errors/AuthenticationError';
-import { getAccessToken, getIsLoggedIn, getRefreshToken } from '../../../stores/auth';
+import getLocation from '../../../helpers/testing/getLocation';
+import { getAccessToken, getIsLoggedIn, getRefreshToken, setTokens } from '../../../stores/auth';
+import Route from '../../Router/routes';
 import Login from './Login.svelte';
 
 jest.mock('../../../api/auth');
 const mockLogin = login as jest.MockedFunction<typeof login>;
 
 describe('Login', () => {
+    beforeEach(() => {
+        mockLogin.mockReset();
+    });
+
     test('it should render login form', () => {
         const { getByRole } = render(Login);
 
@@ -18,6 +24,14 @@ describe('Login', () => {
         expect(getByRole('textbox', { name: 'password' })).toBeInTheDocument();
         expect(getByRole('button', { name: 'Login' })).toBeInTheDocument();
         expect(getByRole('link', { name: 'Register' })).toBeInTheDocument();
+    });
+
+    test('it redirect when already loggedin', async () => {
+        setTokens({ accessToken: 'x', refreshToken: 'x' });
+        render(Login);
+        await tick();
+
+        expect(getLocation()).toContain(Route.Dives);
     });
 
     describe('with api', () => {
@@ -60,7 +74,7 @@ describe('Login', () => {
             const accessToken = 'access_token';
             const refreshToken = 'refresh_token';
 
-            const result = Promise.resolve({ access_token: 'access_token', refresh_token: 'refresh_token' });
+            const result = Promise.resolve({ access_token: accessToken, refresh_token: refreshToken });
             mockLogin.mockReturnValue(result);
 
             userEvent.click(button);
@@ -70,6 +84,17 @@ describe('Login', () => {
             expect(get(getAccessToken)).toEqual(accessToken);
             expect(get(getRefreshToken)).toEqual(refreshToken);
             expect(get(getIsLoggedIn)).toEqual(true);
+        });
+
+        test('it redirects on success', async () => {
+            const result = Promise.resolve({ access_token: 'x', refresh_token: 'x' });
+            mockLogin.mockReturnValue(result);
+
+            userEvent.click(button);
+
+            await result;
+
+            expect(getLocation()).toContain(Route.Dives);
         });
     });
 });

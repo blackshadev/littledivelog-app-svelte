@@ -11,14 +11,13 @@ export async function login({ email, password }: { email: string; password: stri
     return response.data;
 }
 
-export async function logout(refreshToken: string): Promise<LoginResponse> {
-    const promise = axios.delete<LoginResponse>(`${apiURL}/auth/sessions`, {
+export async function logout(refreshToken: string): Promise<void> {
+    const promise = axios.delete<void>(`${apiURL}/auth/sessions`, {
         headers: {
             ...withAuthorizationToken(refreshToken),
         },
     });
     const response = await handleServerError(promise);
-    return response.data;
 }
 
 export async function register({
