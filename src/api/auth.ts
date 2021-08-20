@@ -17,7 +17,7 @@ export async function logout(refreshToken: string): Promise<void> {
             ...withAuthorizationToken(refreshToken),
         },
     });
-    const response = await handleServerError(promise);
+    await handleServerError(promise);
 }
 
 export async function register({

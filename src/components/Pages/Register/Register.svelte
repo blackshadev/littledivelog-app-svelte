@@ -48,7 +48,7 @@
     <form on:submit|preventDefault={register}>
         <FormControl label="E-Mail" name="email" placeholder="john@doe.com" bind:value={email} />
         <FormControl label="Password" name="password" type="password" bind:value={password} />
-        <FormControl label="Confirm Password" name="password-conform" type="password" bind:value={passwordConfirm} />
+        <FormControl label="Confirm Password" name="password-confirm" type="password" bind:value={passwordConfirm} />
         <FormControl label="Display name" name="name" placeholder="John Doe" bind:value={name} />
         <ErrorComponent {error} />
         <button type="submit">Register</button>

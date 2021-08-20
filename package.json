@@ -10,7 +10,7 @@
         "lint:fix": " stylelint --fix src/**/*.{css,scss,svelte} && eslint --fix src && prettier --write .",
         "prepare": "husky install",
         "pre-commit": "lint-staged && svelte-check --tsconfig ./tsconfig.json",
-        "test": "jest src -o --watch"
+        "test": "jest --watch -o src"
     },
     "devDependencies": {
         "@babel/preset-env": "^7.15.0",
@@ -34,6 +34,7 @@
         "eslint-plugin-svelte3": "^3.2.0",
         "husky": "^7.0.1",
         "jest": "26.5.2",
+        "jest-extended": "^0.11.5",
         "lint-staged": "^11.1.1",
         "node-sass": "^6.0.1",
         "prettier": "^2.3.2",
