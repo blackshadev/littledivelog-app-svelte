@@ -4,16 +4,21 @@
     import formatDivetime from '../../../helpers/formatters/formatDivetime';
     import formatPlace from '../../../helpers/formatters/formatPlace';
     import Tags from '../../Tags/Tags.svelte';
+import { setSelectedDiveContext } from '../Context/SelectedDive';
+import DiveDetail from '../Detail/DiveDetail.svelte';
     export let dives: DiveSummary[];
+    
+    const { diveId } = setSelectedDiveContext();
 </script>
 
+<DiveDetail />
 <table>
     <thead>
         <tr><th>Date</th><th>Divetime</th><th>Tags</th><th>Divespot</th></tr>
     </thead>
     <tbody>
         {#each dives as dive}
-            <tr>
+            <tr on:click={() => { $diveId = dive.dive_id }}>
                 <td>{formatDatetime(dive.date)}</td>
                 <td>{formatDivetime(dive.divetime)}</td>
                 <td><Tags tags={dive.tags} /></td>

@@ -3,7 +3,6 @@
     import getBestFontColor from '../../helpers/color/getBestFontColor';
 
     export let tag: Tag;
-    // export let color;
 </script>
 
 <span style={`--background:${tag.color};--foreground:${getBestFontColor(tag.color)};`}>{tag.text}</span>
