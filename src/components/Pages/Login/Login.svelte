@@ -1,6 +1,6 @@
 <script lang="ts">
     import { link, replace } from 'svelte-spa-router';
-    import FormControl from '../../Form/Inputs/FormControl.svelte';
+    import FormControl from '../../Form/Inputs/TextFormControl.svelte';
     import ErrorComponent from '../../Form/ErrorComponent.svelte';
     import routes from '../../Router/routes';
     import * as auth from '../../../api/auth';
@@ -39,7 +39,7 @@
 </form>
 
 <style lang="scss">
-    @import '../../../styling/constants/all.scss';
+    @import '../../../styling/1-settings/all.scss';
 
     .message {
         margin-bottom: $space-md;

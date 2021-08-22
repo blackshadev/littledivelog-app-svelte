@@ -3,18 +3,22 @@ import axios from 'axios';
 import { withAuthorizationToken } from './auth';
 import { apiURL } from './config';
 import handleServerError from './handleServerError';
-import type { Tag } from './tags';
-
-export type DiveSummary = {
-    dive_id: number;
-    divetime: number;
-    date: Date;
-    tags: Tag[];
-    place: { place_id: number; name: string; country_code: string } | null;
-};
+import type { DiveDetail } from './types/dives/DiveDetail';
+import type { DiveSummary } from './types/dives/DiveSummary';
 
 export async function listDives(accessToken: string): Promise<DiveSummary[]> {
     const promise = axios.get<DiveSummary[]>(`${apiURL}/dives/`, {
+        headers: {
+            ...withAuthorizationToken(accessToken),
+        },
+    });
+    const response = await handleServerError(promise);
+
+    return response.data;
+}
+
+export async function getDive(accessToken: string, diveId: number): Promise<DiveDetail> {
+    const promise = axios.get<DiveDetail>(`${apiURL}/dives/${diveId}`, {
         headers: {
             ...withAuthorizationToken(accessToken),
         },

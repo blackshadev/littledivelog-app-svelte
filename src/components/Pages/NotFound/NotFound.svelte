@@ -7,7 +7,7 @@
 </p>
 
 <style lang="scss">
-    @import '../../../styling/constants/all.scss';
+    @import '../../../styling/1-settings/all.scss';
 
     p {
         font-size: $text-lg;

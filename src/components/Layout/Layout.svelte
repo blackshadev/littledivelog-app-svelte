@@ -13,7 +13,7 @@
 </div>
 
 <style lang="scss">
-    @import '../../styling/constants/all.scss';
+    @import '../../styling/1-settings/all.scss';
     div {
         $nav-size: 8rem;
 

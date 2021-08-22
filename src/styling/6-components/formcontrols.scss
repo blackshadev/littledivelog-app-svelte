@@ -1,0 +1,47 @@
+
+.c-form-control {
+    margin-top: -0.5rem;
+    margin-bottom: $space-md;
+    display: block;
+
+    &__label {
+        position: relative;
+        top: $space-sm;
+        padding: 0 $space-xs;
+        margin-left: $space-sm;
+        background: var(--background);
+        color: var(--gray);
+    }
+
+    &__input {
+        border: 1px solid var(--gray);
+        border-radius: $rounded;
+        width: 100%;
+
+        /* padding: $space-md $space */
+        padding: $space-md - $space-xs $space-md;
+        background: var(--background) !important;
+
+        &:focus {
+            outline: 0;
+        }
+    }
+
+    &.--focussed {
+        label {
+            color: var(--highlight);
+        }
+        input {
+            border-color: var(--highlight);
+        }
+    }
+
+    &.--invalid {
+        label {
+            color: var(--error);
+        }
+        input {
+            border-color: var(--error);
+        }
+    }
+}

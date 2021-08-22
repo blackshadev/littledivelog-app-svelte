@@ -1,8 +1,8 @@
 <script lang="ts">
-    import type { Tag } from '../../api/tags';
+    import type { TagSummary } from '../../api/types/tags/TagSummary';
     import TagLabel from './TagLabel.svelte';
 
-    export let tags: Tag[];
+    export let tags: TagSummary[];
 </script>
 
 {#each tags as tag}

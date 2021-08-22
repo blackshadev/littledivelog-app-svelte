@@ -1,9 +1,11 @@
-@import './constants/all.scss';
+@import './1-settings/all.scss';
 
-@import './globals/colors.scss';
+@import './3-generic/colors.scss';
 
 @import './reset.scss';
 
-@import './objects/all.scss';
+@import './4-elements/all.scss';
 
-@import './elements/all.scss';
+@import './5-objects/all.scss';
+
+@import './6-components/all.scss';

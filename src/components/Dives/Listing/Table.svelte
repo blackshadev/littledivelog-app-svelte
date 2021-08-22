@@ -1,24 +1,27 @@
 <script lang="ts">
-    import type { DiveSummary } from '../../../api/dives';
+    import type { DiveSummary } from '../../../api/types/dives/DiveSummary';
     import formatDatetime from '../../../helpers/formatters/formatDatetime';
     import formatDivetime from '../../../helpers/formatters/formatDivetime';
     import formatPlace from '../../../helpers/formatters/formatPlace';
     import Tags from '../../Tags/Tags.svelte';
-import { setSelectedDiveContext } from '../Context/SelectedDive';
-import DiveDetail from '../Detail/DiveDetail.svelte';
+    import { getSelectedDiveContext } from '../Context/SelectedDive';
+
     export let dives: DiveSummary[];
-    
-    const { diveId } = setSelectedDiveContext();
+
+    const { diveId } = getSelectedDiveContext();
 </script>
 
-<DiveDetail />
 <table>
     <thead>
         <tr><th>Date</th><th>Divetime</th><th>Tags</th><th>Divespot</th></tr>
     </thead>
     <tbody>
         {#each dives as dive}
-            <tr on:click={() => { $diveId = dive.dive_id }}>
+            <tr
+                on:click={() => {
+                    diveId.set(dive.dive_id);
+                }}
+            >
                 <td>{formatDatetime(dive.date)}</td>
                 <td>{formatDivetime(dive.divetime)}</td>
                 <td><Tags tags={dive.tags} /></td>
@@ -29,7 +32,7 @@ import DiveDetail from '../Detail/DiveDetail.svelte';
 </table>
 
 <style lang="scss">
-    @import '../../../styling/constants/all.scss';
+    @import '../../../styling/1-settings/all.scss';
 
     table {
         width: 100%;

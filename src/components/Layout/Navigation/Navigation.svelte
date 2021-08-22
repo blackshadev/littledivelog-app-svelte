@@ -16,7 +16,7 @@
 </ul>
 
 <style lang="scss">
-    @import '../../../styling/constants/all.scss';
+    @import '../../../styling/1-settings/all.scss';
     ul {
         list-style: none;
     }
