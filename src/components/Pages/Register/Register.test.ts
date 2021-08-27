@@ -11,10 +11,10 @@ const mockRegister = register as jest.MockedFunction<typeof register>;
 const mockLogin = login as jest.MockedFunction<typeof login>;
 
 const formElementsWithRoles = {
-    email: 'textbox',
-    password: 'textbox',
+    'E-Mail': 'textbox',
+    Password: 'textbox',
     'password-confirm': 'textbox',
-    name: 'textbox',
+    Name: 'textbox',
     Register: 'button',
 };
 
@@ -53,7 +53,7 @@ describe('Register', () => {
     test('it errors if password do not match', async () => {
         const { getByRole, getByText } = render(Register);
 
-        const { password, 'password-confirm': passwordConfirm, Register: button } = extractFields(getByRole);
+        const { Password: password, 'password-confirm': passwordConfirm, Register: button } = extractFields(getByRole);
 
         userEvent.type(password, 'password1');
         userEvent.type(passwordConfirm, 'password2');
@@ -73,10 +73,10 @@ describe('Register', () => {
 
             elements = extractFields(getByRole);
 
-            userEvent.type(elements.name, ':name:');
-            userEvent.type(elements.password, ':password:');
+            userEvent.type(elements.Name, ':name:');
+            userEvent.type(elements.Password, ':password:');
             userEvent.type(elements['password-confirm'], ':password:');
-            userEvent.type(elements.email, ':email:');
+            userEvent.type(elements['E-Mail'], ':email:');
         });
 
         test('it calls register api', async () => {

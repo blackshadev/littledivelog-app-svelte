@@ -1,6 +1,6 @@
 <script lang="ts">
     import { link, replace } from 'svelte-spa-router';
-    import FormControl from '../../Form/FormControls/Text/TextFormControl.svelte';
+    import TextFormControl from '../../Form/FormControls/Text/TextFormControl.svelte';
     import ErrorComponent from '../../Form/ErrorComponent.svelte';
     import routes from '../../Router/routes';
     import * as auth from '../../../api/auth';
@@ -29,8 +29,8 @@
 
 <form class="o-container" on:submit|preventDefault={login}>
     <p class="message">Welcome!</p>
-    <FormControl label="E-Mail" name="email" placeholder="john@doe.com" bind:value={email} />
-    <FormControl label="Password" name="password" type="password" bind:value={password} />
+    <TextFormControl label="E-Mail" name="email" placeholder="john@doe.com" bind:value={email} />
+    <TextFormControl label="Password" name="password" type="password" bind:value={password} />
     <ErrorComponent {error} />
     <p class="action-bar">
         <button type="submit">Login</button>

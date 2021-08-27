@@ -20,8 +20,8 @@ describe('Login', () => {
     test('it should render login form', () => {
         const { getByRole } = render(Login);
 
-        expect(getByRole('textbox', { name: 'email' })).toBeInTheDocument();
-        expect(getByRole('textbox', { name: 'password' })).toBeInTheDocument();
+        expect(getByRole('textbox', { name: 'E-Mail' })).toBeInTheDocument();
+        expect(getByRole('textbox', { name: 'Password' })).toBeInTheDocument();
         expect(getByRole('button', { name: 'Login' })).toBeInTheDocument();
         expect(getByRole('link', { name: 'Register' })).toBeInTheDocument();
     });
@@ -45,8 +45,8 @@ describe('Login', () => {
         beforeEach(() => {
             const { getByRole } = render(Login);
 
-            email = getByRole('textbox', { name: 'email' });
-            password = getByRole('textbox', { name: 'password' });
+            email = getByRole('textbox', { name: 'E-Mail' });
+            password = getByRole('textbox', { name: 'Password' });
             button = getByRole('button', { name: 'Login' });
 
             userEvent.type(email, emailValue);
