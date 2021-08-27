@@ -1,6 +1,6 @@
 <script lang="ts">
     import { link, replace } from 'svelte-spa-router';
-    import FormControl from '../../Form/Inputs/TextFormControl.svelte';
+    import FormControl from '../../Form/FormControls/Text/TextFormControl.svelte';
     import ErrorComponent from '../../Form/ErrorComponent.svelte';
     import routes from '../../Router/routes';
     import * as auth from '../../../api/auth';

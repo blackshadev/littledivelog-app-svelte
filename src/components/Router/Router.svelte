@@ -15,6 +15,7 @@
         [Routes.Login]: Login,
         [Routes.Logout]: Logout,
         [Routes.Dives]: Dives,
+        [Routes.DiveDetail]: Dives,
         [Routes.Register]: Register,
         '*': NotFound,
     };

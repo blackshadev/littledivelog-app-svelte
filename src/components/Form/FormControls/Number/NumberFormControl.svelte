@@ -1,4 +1,6 @@
 <script lang="ts">
+    import psuedorandomString from '../../../../helpers/string/randomString';
+
     export let value: number;
     export let placeholder = '';
     export let digits = 0;
@@ -8,6 +10,7 @@
     let stringValue: string = value.toFixed(digits);
     let invalid = false;
 
+    let uniqueId = `${psuedorandomString()}_${name}`;
     $: updateValue(stringValue);
 
     function round(number: number, precision: number): number {
@@ -36,10 +39,11 @@
 </script>
 
 <p class="c-form-control" class:--focussed={focussed} class:--invalid={invalid}>
-    <label class="c-form-control__label" for={name}>{label}</label>
+    <label class="c-form-control__label" for={uniqueId}>{label}</label>
     <input
         class="c-form-control__input"
         bind:value={stringValue}
+        id={uniqueId}
         {name}
         {placeholder}
         aria-label={name}

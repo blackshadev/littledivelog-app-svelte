@@ -2,8 +2,8 @@
     import type { DiveDetail } from '../../../api/types/dives/DiveDetail';
     import formatDatetime from '../../../helpers/formatters/formatDatetime';
     import formatDivetime from '../../../helpers/formatters/formatDivetime';
-    import NumberFormControl from '../../Form/Inputs/NumberFormControl.svelte';
-    import TextFormControl from '../../Form/Inputs/TextFormControl.svelte';
+    import NumberFormControl from '../../Form/FormControls/Number/NumberFormControl.svelte';
+    import TextFormControl from '../../Form/FormControls/Text/TextFormControl.svelte';
 
     export let dive: DiveDetail;
 

@@ -4,11 +4,14 @@
     import formatDivetime from '../../../helpers/formatters/formatDivetime';
     import formatPlace from '../../../helpers/formatters/formatPlace';
     import Tags from '../../Tags/Tags.svelte';
-    import { getSelectedDiveContext } from '../Context/SelectedDive';
+    import { push } from 'svelte-spa-router';
+    import Route, { route } from '../../Router/routes';
 
     export let dives: DiveSummary[];
 
-    const { diveId } = getSelectedDiveContext();
+    function handleClick(dive: DiveSummary): void {
+        void push(route(Route.DiveDetail, { diveId: dive.dive_id.toString() }));
+    }
 </script>
 
 <table>
@@ -17,11 +20,7 @@
     </thead>
     <tbody>
         {#each dives as dive}
-            <tr
-                on:click={() => {
-                    diveId.set(dive.dive_id);
-                }}
-            >
+            <tr on:click={() => handleClick(dive)}>
                 <td>{formatDatetime(dive.date)}</td>
                 <td>{formatDivetime(dive.divetime)}</td>
                 <td><Tags tags={dive.tags} /></td>
