@@ -1,6 +1,4 @@
 import { fireEvent, render } from '@testing-library/svelte';
-import userEvent from '@testing-library/user-event';
-import { tick } from 'svelte';
 import TextFormControl from './TextFormControl.svelte';
 
 function makeOptions(
