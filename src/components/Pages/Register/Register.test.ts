@@ -13,8 +13,8 @@ const mockLogin = login as jest.MockedFunction<typeof login>;
 const formElementsWithRoles = {
     'E-Mail': 'textbox',
     Password: 'textbox',
-    'password-confirm': 'textbox',
-    Name: 'textbox',
+    'Confirm Password': 'textbox',
+    'Display name': 'textbox',
     Register: 'button',
 };
 
@@ -53,7 +53,7 @@ describe('Register', () => {
     test('it errors if password do not match', async () => {
         const { getByRole, getByText } = render(Register);
 
-        const { Password: password, 'password-confirm': passwordConfirm, Register: button } = extractFields(getByRole);
+        const { Password: password, 'Confirm Password': passwordConfirm, Register: button } = extractFields(getByRole);
 
         userEvent.type(password, 'password1');
         userEvent.type(passwordConfirm, 'password2');
@@ -73,9 +73,9 @@ describe('Register', () => {
 
             elements = extractFields(getByRole);
 
-            userEvent.type(elements.Name, ':name:');
+            userEvent.type(elements['Display name'], ':name:');
             userEvent.type(elements.Password, ':password:');
-            userEvent.type(elements['password-confirm'], ':password:');
+            userEvent.type(elements['Confirm Password'], ':password:');
             userEvent.type(elements['E-Mail'], ':email:');
         });
 

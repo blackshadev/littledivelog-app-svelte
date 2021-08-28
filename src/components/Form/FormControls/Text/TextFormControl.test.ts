@@ -12,12 +12,12 @@ function makeOptions(
     };
 }
 
-describe('NumberFormControl', () => {
+describe('TextFormControl', () => {
     test('it renders', () => {
         const options = makeOptions();
         const { getByLabelText, getByRole } = render(TextFormControl, options);
 
-        const element = getByRole('textbox', { name: options.name });
+        const element = getByRole('textbox', { name: options.label });
 
         expect(element).toBeInTheDocument();
         expect(element).toHaveProperty('placeholder', options.placeholder);
@@ -32,7 +32,7 @@ describe('NumberFormControl', () => {
             const { container, getByRole } = render(TextFormControl, options);
 
             const containerElement = container.querySelector('p');
-            const input = getByRole('textbox', { name: options.name });
+            const input = getByRole('textbox', { name: options.label });
 
             expect(containerElement).not.toHaveClass('--focussed');
             await fireEvent.focus(input);
