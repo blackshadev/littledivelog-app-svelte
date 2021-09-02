@@ -16,11 +16,11 @@
 </script>
 
 <input
-    class={className}
     bind:value
     {id}
     {name}
     {placeholder}
+    class={className}
     role="textbox"
     on:focus={() => ($focussed = true)}
     on:blur={() => ($focussed = false)}

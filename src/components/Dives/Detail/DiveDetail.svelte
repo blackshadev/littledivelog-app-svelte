@@ -36,8 +36,12 @@
     <TextFormControl label="Date" name="date" placeholder="2021-08-21 16:29:00" bind:value={writeDive.date} />
     <TextFormControl label="Divetime" name="divetime" placeholder="23:16" bind:value={writeDive.divetime} />
     <NumberFormControl label="Depth" name="depth" placeholder="6.2" digits={2} bind:value={writeDive.max_depth} />
-    <FormControl label="Tank">
-        <TankInput inputClassName="c-form-control__input" bind:value={writeDive.tanks[0]} />
+    <FormControl>
+        <TankInput
+            labelClassName="c-form-control__label"
+            inputClassName="c-form-control__input"
+            bind:value={writeDive.tanks[0]}
+        />
     </FormControl>
 
     <pre>

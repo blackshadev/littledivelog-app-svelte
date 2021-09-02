@@ -13,6 +13,10 @@
         color: var(--gray);
     }
 
+    &__input + &__label {
+        top: -$space-sm;
+    }
+
     &__input {
         border: 1px solid var(--gray);
         border-radius: $rounded;
@@ -24,7 +28,12 @@
 
         &:focus {
             outline: 0;
+            border-color: var(--highlight);
             box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
+        }
+
+        &.--small {
+            max-width: $size-sm;
         }
     }
 
@@ -32,7 +41,7 @@
         label {
             color: var(--highlight);
         }
-        input {
+        input,select {
             border-color: var(--highlight);
         }
     }

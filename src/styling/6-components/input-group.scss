@@ -1,26 +1,46 @@
 .c-input-group {
     &__row {
-        display: flex;
 
+        &__labels {
+            flex-basis: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-grow: 1;
+            justify-content: space-between;
+
+            .c-form-control__label {
+                margin-right: $space-sm;
+            }
+        }
+
+        &__inputs + &__labels .c-form-control__label {
+            top: -$space-sm;
+        }
         
         .c-form-control__input {
             border-radius: 0;
+            flex-grow: 1;
+            width: auto;
         }
 
-        &:first-child .c-form-control__input {
-            &:first-child {
+        &__inputs {
+            display: flex;
+        }
+
+        &:first-child  &__inputs {
+            *:first-child {
                 border-top-left-radius: $rounded;
             }
-            &:last-child {
+            *:last-child {
                 border-top-right-radius: $rounded;
             }
         }
 
-        &:last-child .c-form-control__input {
-            &:first-child {
+        &:last-child &__inputs {
+            *:first-child {
                 border-bottom-left-radius: $rounded;
             }
-            &:last-child {
+            *:last-child {
                 border-bottom-right-radius: $rounded;
             }
         }

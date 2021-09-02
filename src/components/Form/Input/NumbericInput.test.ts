@@ -1,8 +1,6 @@
 import { fireEvent, render } from '@testing-library/svelte';
 import userEvent from '@testing-library/user-event';
 import { tick } from 'svelte';
-import { get } from 'svelte/store';
-import { setFormControlContext } from '../FormControls/formControlContext';
 import NumbericInput from './NumbericInput.svelte';
 
 function makeOptions(
