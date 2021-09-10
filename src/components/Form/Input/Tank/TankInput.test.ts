@@ -1,6 +1,6 @@
 import { render } from '@testing-library/svelte';
 import userEvent from '@testing-library/user-event';
-import type { DiveTank } from '../../../api/types/tanks/DiveTank';
+import type { DiveTank } from '../../../../api/types/tanks/DiveTank';
 import TankInput from './TankInput.svelte';
 import TestTankInput from './TestTankInput.svelte';
 import { tick } from 'svelte';
@@ -104,7 +104,7 @@ describe('TankInput', () => {
         userEvent.selectOptions(type, 'psi');
         await tick();
 
-        expect(value.textContent).toContain(/"begin":\s199/);
+        expect(value.textContent).toMatch(/"begin":\s199/);
         expect(value.textContent).toMatch(/"end":\s11/);
         expect(value.textContent).toMatch(/"oxygen":\s31/);
         expect(value.textContent).toMatch(/"volume":\s15/);

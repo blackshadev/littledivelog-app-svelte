@@ -5,7 +5,8 @@
     import FormControl from '../../Form/FormControls/FormControl.svelte';
     import NumberFormControl from '../../Form/FormControls/Number/NumberFormControl.svelte';
     import TextFormControl from '../../Form/FormControls/Text/TextFormControl.svelte';
-    import TankInput from '../../Form/Input/TankInput.svelte';
+    import AutocompleteInput from '../../Form/Input/Autocomplete/AutocompleteInput.svelte';
+    import TankInput from '../../Form/Input/Tank/TankInput.svelte';
 
     export let dive: DiveDetail;
 
@@ -22,6 +23,7 @@
                 type: 'psi' | 'bar';
             };
         }[];
+        country_code: string | undefined;
     }
 
     const writeDive: WriteDiveDetail = {
@@ -29,6 +31,7 @@
         divetime: formatDivetime(dive.divetime),
         max_depth: dive.max_depth,
         tanks: dive.tanks.slice(0),
+        country_code: dive.place?.country_code,
     };
 </script>
 
@@ -43,7 +46,29 @@
             bind:value={writeDive.tanks[0]}
         />
     </FormControl>
+    <FormControl label="Place" let:id>
+        <AutocompleteInput
+            {id}
+            bind:value={writeDive.country_code}
+            inputClassName="c-form-control__input"
+            name="place"
+            options={[
+                { label: 'Nederland', value: 'NL' },
+                { label: 'Griekenland', value: 'GR' },
+            ]}
+        />
+    </FormControl>
 
+    <AutocompleteInput
+        id="test"
+        bind:value={writeDive.country_code}
+        inputClassName="c-form-control__input"
+        name="place"
+        options={[
+            { label: 'Nederland', value: 'NL' },
+            { label: 'Griekenland', value: 'GR' },
+        ]}
+    />
     <pre>
         {JSON.stringify(writeDive, null , 4)}
     </pre>

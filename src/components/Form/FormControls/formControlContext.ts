@@ -20,5 +20,5 @@ export function setFormControlContext(): FormControlContext {
 }
 
 export function getFormControlContext(): FormControlContext {
-    return getContext<FormControlContext>(key);
+    return getContext<FormControlContext>(key) ?? setFormControlContext();
 }

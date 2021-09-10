@@ -1,6 +1,6 @@
 <script lang="ts">
     import TankInput from './TankInput.svelte';
-    import type { DiveTank } from '../../../api/types/tanks/DiveTank';
+    import type { DiveTank } from '../../../../api/types/tanks/DiveTank';
 
     let value: DiveTank = {
         volume: 12,

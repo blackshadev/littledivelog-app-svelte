@@ -1,7 +1,7 @@
 <script lang="ts">
     import { writable } from 'svelte/store';
 
-    import { getFormControlContext } from '../FormControls/formControlContext';
+    import { getFormControlContext } from '../../FormControls/formControlContext';
 
     export let values: { value: string; label: string }[];
     export let className: string | undefined = undefined;

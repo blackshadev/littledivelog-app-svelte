@@ -1,5 +1,5 @@
 <script lang="ts">
-    import NumbericInput from '../../Input/NumbericInput.svelte';
+    import NumbericInput from '../../Input/Numberic/NumbericInput.svelte';
     import FormControl from '../FormControl.svelte';
 
     export let value: number;

@@ -1,8 +1,8 @@
 <script lang="ts">
-    import type { DiveTank } from '../../../api/types/tanks/DiveTank';
-    import psuedorandomString from '../../../helpers/string/randomString';
-    import NumbericInput from './NumbericInput.svelte';
-    import SelectInput from './SelectInput.svelte';
+    import type { DiveTank } from '../../../../api/types/tanks/DiveTank';
+    import psuedorandomString from '../../../../helpers/string/randomString';
+    import NumbericInput from './../Numberic/NumbericInput.svelte';
+    import SelectInput from '../Select/SelectInput.svelte';
 
     export let value: DiveTank;
     export let inputClassName: string | undefined = undefined;

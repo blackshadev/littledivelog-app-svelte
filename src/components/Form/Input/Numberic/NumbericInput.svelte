@@ -1,6 +1,6 @@
 <script lang="ts">
     import { writable } from 'svelte/store';
-    import { getFormControlContext } from '../FormControls/formControlContext';
+    import { getFormControlContext } from '../../FormControls/formControlContext';
 
     export let value: number;
     export let placeholder = '';
@@ -9,7 +9,7 @@
     export let className = '';
     export let id: string | undefined = undefined;
     let stringValue: string | undefined = value.toFixed(digits);
-    const { focussed, invalid } = getFormControlContext() ?? { focussed: writable(false), invalid: writable(false) };
+    const { focussed, invalid } = getFormControlContext();
 
     $: updateValue(stringValue);
 

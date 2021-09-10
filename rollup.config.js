@@ -56,13 +56,16 @@ export default {
         replace({
             preventAssignment: true,
             values: {
-                process: JSON.stringify({ env: { isProd: production } }),
+                'process.env.NODE_ENV': production ? '"production"' : '"dev"',
             },
         }),
         svelte({
             preprocess: sveltePreprocess({
                 sourceMap: !production,
                 scss: true,
+                typescript: {
+                    tsconfigFile: './tsconfig.build.json',
+                },
             }),
             compilerOptions: {
                 // enable run-time checks when not in production
@@ -86,6 +89,7 @@ export default {
         typescript({
             sourceMap: !production,
             inlineSources: !production,
+            tsconfig: './tsconfig.build.json',
         }),
 
         // In dev mode, call `npm run start` once
