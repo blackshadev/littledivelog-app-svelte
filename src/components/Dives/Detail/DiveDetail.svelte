@@ -6,6 +6,7 @@
     import NumberFormControl from '../../Form/FormControls/Number/NumberFormControl.svelte';
     import TextFormControl from '../../Form/FormControls/Text/TextFormControl.svelte';
     import AutocompleteInput from '../../Form/Input/Autocomplete/AutocompleteInput.svelte';
+    import PlaceInput from '../../Form/Input/Place/PlaceInput.svelte';
     import TankInput from '../../Form/Input/Tank/TankInput.svelte';
 
     export let dive: DiveDetail;
@@ -47,28 +48,9 @@
         />
     </FormControl>
     <FormControl label="Place" let:id>
-        <AutocompleteInput
-            {id}
-            bind:value={writeDive.country_code}
-            inputClassName="c-form-control__input"
-            name="place"
-            options={[
-                { label: 'Nederland', value: 'NL' },
-                { label: 'Griekenland', value: 'GR' },
-            ]}
-        />
+        <PlaceInput {id} bind:countryValue={writeDive.country_code} inputClassName="c-form-control__input" />
     </FormControl>
 
-    <AutocompleteInput
-        id="test"
-        bind:value={writeDive.country_code}
-        inputClassName="c-form-control__input"
-        name="place"
-        options={[
-            { label: 'Nederland', value: 'NL' },
-            { label: 'Griekenland', value: 'GR' },
-        ]}
-    />
     <pre>
         {JSON.stringify(writeDive, null , 4)}
     </pre>

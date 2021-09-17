@@ -4,7 +4,7 @@
     export let attributes: { [name: string]: string | number | boolean | undefined } = {};
     export let value: string;
     export let placeholder = '';
-    export let name: string;
+    export let name: string | undefined = undefined;
     export let className = '';
     export let type: 'text' | 'password' = 'text';
     export let id: string | undefined = undefined;
