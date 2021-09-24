@@ -11,6 +11,7 @@ import path from 'path';
 import replace from '@rollup/plugin-replace';
 
 const production = !process.env.ROLLUP_WATCH;
+console.log('production ', production);
 
 function serve() {
     let server;

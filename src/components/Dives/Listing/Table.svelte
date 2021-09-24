@@ -6,6 +6,7 @@
     import Tags from '../../Tags/Tags.svelte';
     import { push } from 'svelte-spa-router';
     import Route, { route } from '../../Router/routes';
+    import { universalTagFromTagSummary } from '../../../helpers/transformers/toUniversalTag';
 
     export let dives: DiveSummary[];
 
@@ -23,7 +24,7 @@
             <tr on:click={() => handleClick(dive)}>
                 <td>{formatDatetime(dive.date)}</td>
                 <td>{formatDivetime(dive.divetime)}</td>
-                <td><Tags tags={dive.tags} /></td>
+                <td><Tags tags={dive.tags.map(universalTagFromTagSummary)} /></td>
                 <td>{formatPlace(dive.place)}</td>
             </tr>
         {/each}

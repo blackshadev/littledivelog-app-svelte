@@ -1,10 +1,12 @@
 <script lang="ts">
-    import type { TagSummary } from '../../api/types/tags/TagSummary';
-    import TagLabel from './TagLabel.svelte';
+    import type { UniversalTag } from '../../api/types/universalTag';
+    import TagItem from './TagItem.svelte';
 
-    export let tags: TagSummary[];
+    export let tags: UniversalTag[];
 </script>
 
-{#each tags as tag}
-    <TagLabel {tag} />
-{/each}
+<ul class="c-tag">
+    {#each tags as tag}
+        <TagItem {tag} />
+    {/each}
+</ul>

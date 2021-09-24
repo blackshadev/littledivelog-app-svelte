@@ -205,7 +205,7 @@
         position: relative;
 
         ul {
-            z-index: 1;
+            z-index: 2;
             display: none;
             position: absolute;
             top: 100%;

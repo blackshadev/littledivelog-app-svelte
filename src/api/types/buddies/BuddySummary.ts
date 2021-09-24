@@ -1,5 +1,5 @@
 export type BuddySummary = {
-    id: number;
+    buddy_id: number;
     text: string;
     color: string;
 };

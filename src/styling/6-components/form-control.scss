@@ -4,6 +4,32 @@
     margin-bottom: $space-md;
     display: block;
 
+    $base: &;
+    &__line {
+        display: flex;
+        width: 100%;
+
+        & > * {
+            flex: 1;
+        }
+        
+        #{$base}__input {
+            border-radius: 0;
+
+            &.--first {
+                border-top-left-radius: $rounded;
+                border-bottom-left-radius: $rounded;
+            }
+
+            &.--last {
+                border-top-right-radius: $rounded;
+                border-bottom-right-radius: $rounded;
+            }
+            
+        }
+
+    }
+
     &__label {
         position: relative;
         top: $space-sm;

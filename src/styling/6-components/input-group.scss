@@ -17,10 +17,13 @@
             top: -$space-sm;
         }
         
+        & > div {
+            flex-grow: 1;
+        }
+
         .c-form-control__input {
             border-radius: 0;
-            flex-grow: 1;
-            width: auto;
+            width: 100%;
         }
 
         &__inputs {
@@ -28,19 +31,19 @@
         }
 
         &:first-child  &__inputs {
-            *:first-child {
+            *:first-child, .--first {
                 border-top-left-radius: $rounded;
             }
-            *:last-child {
+            *:last-child, .--last {
                 border-top-right-radius: $rounded;
             }
         }
 
         &:last-child &__inputs {
-            *:first-child {
+            *:first-child, .--first {
                 border-bottom-left-radius: $rounded;
             }
-            *:last-child {
+            *:last-child, .--last {
                 border-bottom-right-radius: $rounded;
             }
         }
