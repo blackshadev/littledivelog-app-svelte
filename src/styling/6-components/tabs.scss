@@ -1,0 +1,29 @@
+.c-tabs {
+    &__header {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        border-bottom: 1px solid var(--light-gray);
+        margin-bottom: $space-sm;
+        padding-left: $space-sm;
+
+        &__item {
+            margin-bottom: -1px;
+            border: 1px solid transparent;
+            border-top-left-radius: $space-xs;
+            border-top-right-radius: $space-xs;
+            display: block;
+            padding: $space-sm $space-md;
+            cursor: pointer;
+
+            &.--active {
+                color: var(--accent);
+                border-color: var(--light-gray) var(--light-gray) var(--background);
+            }
+
+            &:hover:not(.--active) {
+                color: var(--highlight);
+            }
+        }
+    }
+}

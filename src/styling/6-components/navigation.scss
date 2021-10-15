@@ -1,0 +1,17 @@
+
+.c-navigation {
+    margin-top: $space-md;
+    list-style: none;
+
+    a {
+        color: var(--background);
+        display: block;
+        padding: $space-sm $space-md;
+        text-decoration: none;
+        width: 100%;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

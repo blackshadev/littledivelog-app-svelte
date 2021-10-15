@@ -5,31 +5,20 @@
     import routes from '../../Router/routes';
 </script>
 
-<ul>
+<ul class="c-navigation">
     {#if !$getIsLoggedIn}
-        <li><a href={routes.Login} use:link>Login</a></li>
+        <li>
+            <a href={routes.Login} use:link>
+                <span>Login</span>
+            </a>
+        </li>
     {:else}
-        <li><a href={routes.Home} use:link>Home</a></li>
-        <li><a href={routes.Dives} use:link>Dives</a></li>
-        <li><a href={routes.Logout} use:link>Logout</a></li>
+        <li>
+            <a href={routes.Home} use:link>
+                <span>Home</span>
+            </a>
+        </li>
+        <li><a href={routes.Dives} use:link><span>Dives</span></a></li>
+        <li><a href={routes.Logout} use:link><span>Logout</span></a></li>
     {/if}
 </ul>
-
-<style lang="scss">
-    @import '../../../styling/1-settings/all.scss';
-    ul {
-        list-style: none;
-    }
-
-    a {
-        color: var(--background);
-        display: block;
-        padding: $space-sm $space-md;
-        text-decoration: none;
-        width: 100%;
-
-        &:hover {
-            text-decoration: underline;
-        }
-    }
-</style>

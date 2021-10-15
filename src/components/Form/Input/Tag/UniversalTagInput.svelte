@@ -38,7 +38,9 @@
     value={autoCompleteValue}
     getKey={(t) => t.id}
     on:selectValue={(val) => {
-        selectValue(val.detail);
+        if (val.detail) {
+            selectValue(val.detail);
+        }
         filterValue = '';
         autoCompleteValue = undefined;
     }}
