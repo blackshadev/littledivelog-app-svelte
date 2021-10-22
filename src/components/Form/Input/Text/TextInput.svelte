@@ -11,21 +11,37 @@
     export let role: string = 'textbox';
     const { focussed } = getFormControlContext();
 
+    let internalValue = value;
+    $: internalValue = value;
+
     const setType = (node: HTMLInputElement) => {
         node.type = type;
     };
+
+    function applyValue() {
+        if (value === internalValue) {
+            return;
+        }
+
+        value = internalValue;
+    }
 </script>
 
 <input
-    bind:value
+    bind:value={internalValue}
     {id}
     {name}
     {placeholder}
     class={className}
     {role}
     {...attributes}
-    on:focus={() => ($focussed = true)}
-    on:blur={() => ($focussed = false)}
+    on:focus={() => {
+        $focussed = true;
+    }}
+    on:blur={() => {
+        $focussed = false;
+        applyValue();
+    }}
     on:keydown
     use:setType
 />

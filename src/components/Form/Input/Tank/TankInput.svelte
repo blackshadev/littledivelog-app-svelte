@@ -16,8 +16,8 @@
 
     $: {
         value = {
-            oxygen,
             volume,
+            oxygen,
             pressure: {
                 begin: beginPressure,
                 end: endPressure,

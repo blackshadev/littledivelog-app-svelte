@@ -1,6 +1,5 @@
 <script lang="ts">
     import { writable } from 'svelte/store';
-
     import { getFormControlContext } from '../../FormControls/formControlContext';
 
     export let values: { value: string; label: string }[];
@@ -20,7 +19,7 @@
     on:focus={() => ($focussed = true)}
     on:blur={() => ($focussed = false)}
 >
-    {#each values as value}
-        <option value={value.value}>{value.label}</option>
+    {#each values as option}
+        <option value={option.value}>{option.label}</option>
     {/each}
 </select>

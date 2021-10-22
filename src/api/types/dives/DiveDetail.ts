@@ -4,6 +4,7 @@ import type { DiveTank } from '../tanks/DiveTank';
 
 export type DiveDetail = {
     dive_id: number;
+    updated: Date;
     divetime: number;
     max_depth: number;
     date: Date;

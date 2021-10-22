@@ -1,6 +1,6 @@
 <script lang="ts">
     import type { SvelteComponent } from 'svelte';
-    import type { WriteDiveDetail } from '../../Dives/Detail/WriteDiveDetail';
+    import type { WriteDiveDetail } from '../WriteDiveDetail';
 
     type Tab = {
         label: string;

@@ -3,6 +3,8 @@ import type { Place } from '../../../api/types/places/country';
 import type { TagSummary } from '../../../api/types/tags/TagSummary';
 
 export interface WriteDiveDetail {
+    id: null | number;
+    updated: string;
     date: string;
     divetime: string;
     max_depth: number;

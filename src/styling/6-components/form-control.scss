@@ -1,4 +1,3 @@
-
 .c-form-control {
     margin-top: -0.5rem;
     margin-bottom: $space-md;
@@ -12,7 +11,7 @@
         & > * {
             flex: 1;
         }
-        
+
         #{$base}__input {
             border-radius: 0;
 
@@ -25,16 +24,14 @@
                 border-top-right-radius: $rounded;
                 border-bottom-right-radius: $rounded;
             }
-            
         }
-
     }
 
     &__label {
         position: relative;
         top: $space-sm;
         padding: 0 $space-xs;
-        margin-left: $space-sm;
+        margin-left: $space-md;
         background: var(--background);
         color: var(--gray);
         z-index: 1;
@@ -44,14 +41,15 @@
         top: -$space-sm;
     }
 
-    &__input {
+    &__input,
+    &__static {
+        font-size: 0.9rem;
         border: 1px solid var(--gray);
         border-radius: $rounded;
         width: 100%;
 
-        /* padding: $space-md $space */
-        padding: $space-md - $space-xs $space-md;
-        background: var(--background) !important;
+        padding: $space-md $space-md $space-sm $space-md;
+        background: var(--background);
 
         &:focus {
             outline: 0;
@@ -64,11 +62,18 @@
         }
     }
 
+    &__static {
+        display: block;
+        border-color: transparent;
+        padding-bottom: 0;
+    }
+
     &.--focussed {
         label {
             color: var(--highlight);
         }
-        input,select {
+        input,
+        select {
             border-color: var(--highlight);
         }
     }

@@ -1,6 +1,4 @@
 <script lang="ts">
-    import formatDatetime from '../../../helpers/formatters/formatDatetime';
-
     import FormControl from '../../Form/FormControls/FormControl.svelte';
     import NumberFormControl from '../../Form/FormControls/Number/NumberFormControl.svelte';
     import TextFormControl from '../../Form/FormControls/Text/TextFormControl.svelte';
@@ -14,6 +12,9 @@
 </script>
 
 <form>
+    <FormControl label="Updated">
+        <span class="c-form-control__static">{writeDive.updated}</span>
+    </FormControl>
     <TextFormControl label="Date" name="date" placeholder="2021-08-21 16:29:00" bind:value={writeDive.date} />
     <TextFormControl label="Divetime" name="divetime" placeholder="23:16" bind:value={writeDive.divetime} />
     <NumberFormControl label="Depth" name="depth" placeholder="6.2" digits={2} bind:value={writeDive.max_depth} />

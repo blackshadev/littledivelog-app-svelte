@@ -6,5 +6,6 @@
 </script>
 
 <li class="c-tags__item" style={`--background:${tag.color};--foreground:${getBestFontColor(tag.color)};`}>
-    {tag.text}
+    <span>{tag.text}</span>
+    <slot />
 </li>

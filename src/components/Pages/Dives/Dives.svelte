@@ -37,17 +37,3 @@
         </section>
     {/if}
 </div>
-
-<style lang="scss">
-    .c-page-dive {
-        display: flex;
-
-        &__list {
-            flex: 1 0 50%;
-        }
-
-        &__detail {
-            flex: 0 0 50%;
-        }
-    }
-</style>

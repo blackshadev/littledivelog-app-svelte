@@ -1,5 +1,6 @@
 <script lang="ts">
-    import Tags from '../../../Tags/Tags.svelte';
+    import TagItem from '../../../Tags/TagItem.svelte';
+
     import AutocompleteInput from '../Autocomplete/AutocompleteInput.svelte';
     type Tag = {
         color: string;
@@ -17,8 +18,12 @@
 
     let autoCompleteValue: any | undefined;
 
-    function selectValue(val: Tag) {
+    function selectValue(val: Tag): void {
         value = [...value, val];
+    }
+
+    function unselectValue(valueToRemove: Tag): void {
+        value = value.filter((tag: Tag) => valueToRemove !== tag);
     }
 
     let options: { label: string; value: Tag }[];
@@ -45,4 +50,10 @@
         autoCompleteValue = undefined;
     }}
 />
-<Tags tags={value} />
+<ul class="c-tag">
+    {#each value as tag}
+        <TagItem {tag}>
+            <button class="o-clickable-text" on:click={() => unselectValue(tag)}> X </button>
+        </TagItem>
+    {/each}
+</ul>

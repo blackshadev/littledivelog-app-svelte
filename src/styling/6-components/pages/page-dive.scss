@@ -1,0 +1,14 @@
+.c-page-dive {
+    display: flex;
+
+    &__list {
+        flex: 1 0 50%;
+        padding: $space-sm $space-md;
+    }
+
+    &__detail {
+        flex: 0 0 50%;
+        border-left: 1px solid var(--light-gray);
+        padding: $space-md 0;
+    }
+}

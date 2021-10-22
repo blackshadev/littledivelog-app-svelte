@@ -4,6 +4,7 @@ import type { DiveTank } from '../../../../api/types/tanks/DiveTank';
 import TankInput from './TankInput.svelte';
 import TestTankInput from './TestTankInput.svelte';
 import { tick } from 'svelte';
+import { fireEvent } from '@testing-library/dom';
 
 function makeOptions(opt: { value?: DiveTank } = {}) {
     return {
@@ -99,9 +100,10 @@ describe('TankInput', () => {
 
         userEvent.clear(oxygen);
         userEvent.type(oxygen, '31');
+        oxygen.blur();
         await tick();
 
-        userEvent.selectOptions(type, 'psi');
+        fireEvent.change(type, { target: { value: 'psi' } });
         await tick();
 
         expect(value.textContent).toMatch(/"begin":\s199/);

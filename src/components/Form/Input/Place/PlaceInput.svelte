@@ -1,9 +1,9 @@
 <script lang="ts">
+    import { onMount } from 'svelte';
     import AutocompleteInput from '../Autocomplete/AutocompleteInput.svelte';
     import * as api from '../../../../api/places';
     import { withAccessToken } from '../../../../helpers/auth/withAccessToken';
     import type { Place } from '../../../../api/types/places/country';
-    import { onMount } from 'svelte';
 
     export let countryValue: string | undefined = undefined;
     export let id: string;

@@ -37,7 +37,6 @@
             min-height: 100%;
             top: 0;
             right: 0;
-            padding: $space-md;
         }
     }
 </style>
