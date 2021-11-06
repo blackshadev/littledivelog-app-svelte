@@ -1,6 +1,5 @@
 <script>
     import { link } from 'svelte-spa-router';
-
     import { getIsLoggedIn } from '../../../stores/auth';
     import routes from '../../Router/routes';
 </script>
@@ -14,7 +13,7 @@
         </li>
     {:else}
         <li>
-            <a href={routes.Home} use:link>
+            <a href={routes.Dashboard} use:link>
                 <span>Home</span>
             </a>
         </li>

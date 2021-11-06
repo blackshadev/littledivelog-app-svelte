@@ -13,6 +13,6 @@ module.exports = {
     testPathIgnorePatterns: ['node_modules'],
     bail: false,
     verbose: true,
-    transformIgnorePatterns: ['node_modules/(?!(.*(svelte-spa-router|regexparam))/)'],
+    transformIgnorePatterns: ['node_modules/(?!(.*(svelte-spa-router|regexparam|svelte-fa))/)'],
     setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect', 'jest-extended'],
 };

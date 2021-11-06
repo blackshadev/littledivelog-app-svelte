@@ -10,6 +10,7 @@
     type Option = {
         label: string;
         value: Value;
+        isNew?: boolean;
     };
 
     export let value: Value | undefined = undefined;
@@ -22,6 +23,7 @@
     export let label: string | undefined = undefined;
     export let clientFilter: boolean = false;
     export let getKey: (value: Value) => string = (value) => value;
+    export let getNewValue: undefined | ((filterValue: string) => Value) = undefined;
 
     let { focussed } = getFormControlContext();
 
@@ -43,7 +45,7 @@
         value = newValue;
         hoverIndex = 0;
         const key = value ? getKey(newValue) : undefined;
-        filterValue = options.find((option) => key === getKey(option.value))?.label ?? '';
+        filterValue = filteredOptions.find((option) => key === getKey(option.value))?.label ?? '';
     }
 
     function navigate(direction: -1 | 1) {
@@ -111,17 +113,6 @@
         selectValue(value);
     }
 
-    $: {
-        if (value && options && clientFilter) {
-            setValue(value);
-        }
-    }
-    onMount(() => {
-        if (value && options) {
-            setValue(value);
-        }
-    });
-
     let filteredOptions: Option[] = options;
     $: {
         if (clientFilter) {
@@ -136,7 +127,25 @@
         } else {
             filteredOptions = options;
         }
+
+        if (filterValue && getNewValue) {
+            filteredOptions = [
+                ...filteredOptions,
+                { isNew: true, label: `${filterValue}`, value: getNewValue(filterValue) },
+            ];
+        }
     }
+
+    $: {
+        if (value && options && clientFilter) {
+            setValue(value);
+        }
+    }
+    onMount(() => {
+        if (value && options) {
+            setValue(value);
+        }
+    });
 
     function handleWindowFocus(event: FocusEvent) {
         const eventTarget = event.target as Node;
@@ -192,6 +201,7 @@
                 }}
                 on:mouseenter={() => (hoverIndex = index)}
             >
+                {option.isNew ? '(new)' : ''}
                 {option.label}
             </li>
         {/each}

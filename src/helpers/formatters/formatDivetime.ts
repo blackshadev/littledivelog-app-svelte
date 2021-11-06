@@ -12,6 +12,11 @@ export default function formatDivetime(value: number | null): string {
     return `${t.hh}:${t.mm}:${t.ss}`;
 }
 
+export function parseDivetime(divetime: string): number {
+    const [hh, mm, ss] = divetime.split(':').map(Number);
+    return hh * 3600 + mm * 60 + ss;
+}
+
 function leftpad(length: number, str: string, char = '0') {
     for (let i = str.length; i < length; i++) {
         str = char + str;

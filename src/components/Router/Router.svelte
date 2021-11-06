@@ -3,7 +3,7 @@
     import type { WrappedComponent } from 'svelte-spa-router';
     import Router from 'svelte-spa-router';
     import Dives from '../Pages/Dives/Dives.svelte';
-    import Home from '../Pages/Home/Home.svelte';
+    import Dashboard from '../Pages/Dashboard/dashboard.svelte';
     import Login from '../Pages/Login/Login.svelte';
     import Logout from '../Pages/Logout/Logout.svelte';
     import NotFound from '../Pages/NotFound/NotFound.svelte';
@@ -11,7 +11,7 @@
     import Routes from './routes';
 
     export const routes: Record<string, typeof SvelteComponent | WrappedComponent> = {
-        [Routes.Home]: Home,
+        [Routes.Dashboard]: Dashboard,
         [Routes.Login]: Login,
         [Routes.Logout]: Logout,
         [Routes.Dives]: Dives,

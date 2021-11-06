@@ -1,6 +1,8 @@
 import type { BuddySummary } from '../../../api/types/buddies/BuddySummary';
 import type { Place } from '../../../api/types/places/country';
 import type { TagSummary } from '../../../api/types/tags/TagSummary';
+import type { DiveTank } from '../../../api/types/tanks/DiveTank';
+import type { Optional } from '../../../helpers/types/optional';
 
 export interface WriteDiveDetail {
     id: null | number;
@@ -8,17 +10,9 @@ export interface WriteDiveDetail {
     date: string;
     divetime: string;
     max_depth: number;
-    tanks: {
-        volume: number;
-        oxygen: number;
-        pressure: {
-            begin: number;
-            end: number;
-            type: 'psi' | 'bar';
-        };
-    }[];
+    tanks: DiveTank[];
     country_code: string | undefined;
-    place?: Place | { name: string; country_code: string };
+    place?: Optional<Place, 'place_id'>;
     buddies: BuddySummary[];
     tags: TagSummary[];
 }

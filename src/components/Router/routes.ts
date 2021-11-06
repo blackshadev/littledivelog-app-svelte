@@ -1,5 +1,5 @@
 export enum Route {
-    Home = '/',
+    Dashboard = '/',
     Dives = '/dives',
     DiveDetail = '/dives/:diveId',
     Login = '/login',

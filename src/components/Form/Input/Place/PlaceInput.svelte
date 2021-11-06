@@ -51,6 +51,7 @@
     bind:value={placeValue}
     bind:filterValue={placeFilterValue}
     options={placeOptions}
+    getNewValue={(filter) => ({ name: filter, country_code: countryValue })}
     on:selectValue={(placeEvent) => {
         if (placeEvent.detail && placeEvent.detail.country_code && placeEvent.detail.country_code !== countryValue) {
             countryValue = placeEvent.detail.country_code;

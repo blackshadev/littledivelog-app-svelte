@@ -1,0 +1,37 @@
+.c-dashboard {
+    padding: $space-lg $space-md;
+    margin: 0 auto;
+    width: $size-lg;
+    background: var(--light-gray);
+
+    h1 {
+        text-align: center;
+    }
+    h2 {
+        padding-left: $space-md;
+        color: var(--gray);
+    }
+
+    hr {
+        border: 0;
+        border-top: 1px solid var(--gray);
+    }
+
+    &__metrics {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: $space-md;
+        justify-items: center;
+        padding: $space-lg;
+
+        &__item {
+            display: inline-block;
+            width: $size-sm;
+            text-align: center;
+            color: var(--background);
+            background-color: var(--accent);
+            padding: $space-sm;
+            border-radius: $rounded;
+        }
+    }
+}
