@@ -12,5 +12,8 @@ export async function listTags(accessToken: string): Promise<TagSummary[]> {
     });
     const response = await handleServerError(promise);
 
-    return response.data;
+    return response.data.map((tag) => {
+        tag.last_dive = new Date(tag.last_dive);
+        return tag;
+    });
 }

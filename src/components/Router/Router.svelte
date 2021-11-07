@@ -9,6 +9,8 @@
     import NotFound from '../Pages/NotFound/NotFound.svelte';
     import Register from '../Pages/Register/Register.svelte';
     import Routes from './routes';
+    import Buddies from '../Pages/Buddies/Buddies.svelte';
+    import Tags from '../Pages/Tags/Tags.svelte';
 
     export const routes: Record<string, typeof SvelteComponent | WrappedComponent> = {
         [Routes.Dashboard]: Dashboard,
@@ -16,7 +18,9 @@
         [Routes.Logout]: Logout,
         [Routes.Dives]: Dives,
         [Routes.DiveDetail]: Dives,
+        [Routes.Buddies]: Buddies,
         [Routes.Register]: Register,
+        [Routes.Tags]: Tags,
         '*': NotFound,
     };
 </script>

@@ -15,7 +15,7 @@
     }
 </script>
 
-<table>
+<table class="c-table">
     <thead>
         <tr><th>Date</th><th>Divetime</th><th>Tags</th><th>Divespot</th></tr>
     </thead>
@@ -30,36 +30,3 @@
         {/each}
     </tbody>
 </table>
-
-<style lang="scss">
-    @import '../../../styling/1-settings/all.scss';
-
-    table {
-        width: 100%;
-        border-collapse: collapse;
-
-        thead {
-            th {
-                text-align: left;
-                padding-top: $space-lg;
-                padding-bottom: $space-lg;
-            }
-        }
-
-        thead th,
-        tbody td {
-            border: 0;
-            border-bottom: 1px solid var(--light-gray);
-            padding-left: $space-sm;
-            padding-right: $space-sm;
-        }
-
-        tbody td {
-            padding: $space-md 0;
-        }
-
-        tbody tr:hover td {
-            background: var(--hover);
-        }
-    }
-</style>

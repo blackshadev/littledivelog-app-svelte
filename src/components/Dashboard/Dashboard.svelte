@@ -24,11 +24,11 @@
             {profile.computer_count}
         </a>
         <a class="c-dashboard__metrics__item" href="/" use:link aria-label="Buddy count">
-            <i class="c-icon --dive-buddy" />
+            <i class="c-icon --dive-buddies" />
             {profile.buddy_count}
         </a>
         <a class="c-dashboard__metrics__item" href="/" use:link aria-label="Tag count">
-            <i class="c-icon --dive-tag" />
+            <i class="c-icon --dive-tags" />
             {profile.tag_count}
         </a>
     </div>

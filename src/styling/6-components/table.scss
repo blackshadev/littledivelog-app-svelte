@@ -1,0 +1,28 @@
+.c-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    thead {
+        th {
+            text-align: left;
+            padding-top: $space-lg;
+            padding-bottom: $space-lg;
+        }
+    }
+
+    thead th,
+    tbody td {
+        border: 0;
+        border-bottom: 1px solid var(--light-gray);
+        padding-left: $space-sm;
+        padding-right: $space-sm;
+    }
+
+    tbody td {
+        padding: $space-md 0;
+    }
+
+    tbody tr:hover td {
+        background: var(--hover);
+    }
+}

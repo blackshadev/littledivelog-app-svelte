@@ -1,10 +1,14 @@
 export enum Route {
     Dashboard = '/',
     Dives = '/dives',
+    Buddies = '/buddies',
+    BuddyDetail = '/buddies/:buddyId',
     DiveDetail = '/dives/:diveId',
     Login = '/login',
     Register = '/register',
     About = '/about',
+    Tags = '/tags',
+    TagDetail = '/tags/:tagId',
     Logout = '/logout',
 }
 export default Route;

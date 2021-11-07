@@ -12,5 +12,8 @@ export async function listBuddies(accessToken: string): Promise<BuddySummary[]> 
     });
     const response = await handleServerError(promise);
 
-    return response.data;
+    return response.data.map((b) => {
+        b.last_dive = new Date(b.last_dive);
+        return b;
+    });
 }

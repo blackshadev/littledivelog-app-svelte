@@ -26,6 +26,18 @@
             </a>
         </li>
         <li>
+            <a href={routes.Buddies} use:link>
+                <i class="c-icon --dive-buddies" />
+                <span>Buddies</span>
+            </a>
+        </li>
+        <li>
+            <a href={routes.Tags} use:link>
+                <i class="c-icon --dive-tags" />
+                <span>Tags</span>
+            </a>
+        </li>
+        <li>
             <a href={routes.Logout} use:link>
                 <i class="c-icon --signout" />
                 <span>Logout</span>
