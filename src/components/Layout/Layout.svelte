@@ -15,7 +15,7 @@
 <style lang="scss">
     @import '../../styling/1-settings/all.scss';
     div {
-        $nav-size: 8rem;
+        $nav-size: 9rem;
 
         display: flex;
         flex-direction: row;

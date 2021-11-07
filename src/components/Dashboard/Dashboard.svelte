@@ -1,8 +1,6 @@
 <script lang="ts">
-    import Fa from 'svelte-fa';
     import { link } from 'svelte-spa-router';
     import type { Profile } from '../../api/types/profile/profile';
-    import { faTint, faDesktop, faUsers, faTags } from '@fortawesome/free-solid-svg-icons';
     import routes from '../Router/routes';
     import { getGreeting } from '../../helpers/string/greeting';
 
@@ -18,19 +16,19 @@
 
     <div class="c-dashboard__metrics">
         <a class="c-dashboard__metrics__item" href={routes.Dives} use:link aria-label="Dive count">
-            <Fa icon={faTint} />
+            <i class="c-icon --dive" />
             {profile.dive_count}
         </a>
         <a class="c-dashboard__metrics__item" href="/" use:link aria-label="Computer count">
-            <Fa icon={faDesktop} />
+            <i class="c-icon --dive-computer" />
             {profile.computer_count}
         </a>
         <a class="c-dashboard__metrics__item" href="/" use:link aria-label="Buddy count">
-            <Fa icon={faUsers} />
+            <i class="c-icon --dive-buddy" />
             {profile.buddy_count}
         </a>
         <a class="c-dashboard__metrics__item" href="/" use:link aria-label="Tag count">
-            <Fa icon={faTags} />
+            <i class="c-icon --dive-tag" />
             {profile.tag_count}
         </a>
     </div>

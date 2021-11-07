@@ -25,6 +25,7 @@
         padding: $space-lg;
 
         &__item {
+            white-space: nowrap;
             display: inline-block;
             width: $size-sm;
             text-align: center;
@@ -32,6 +33,10 @@
             background-color: var(--accent);
             padding: $space-sm;
             border-radius: $rounded;
+
+            i {
+                margin-right: $space-sm;
+            }
         }
     }
 }

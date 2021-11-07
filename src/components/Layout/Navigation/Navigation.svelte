@@ -8,16 +8,28 @@
     {#if !$getIsLoggedIn}
         <li>
             <a href={routes.Login} use:link>
+                <i class="c-icon --signin" />
                 <span>Login</span>
             </a>
         </li>
     {:else}
         <li>
             <a href={routes.Dashboard} use:link>
-                <span>Home</span>
+                <i class="c-icon --dashboard" />
+                <span>Dashboard</span>
             </a>
         </li>
-        <li><a href={routes.Dives} use:link><span>Dives</span></a></li>
-        <li><a href={routes.Logout} use:link><span>Logout</span></a></li>
+        <li>
+            <a href={routes.Dives} use:link>
+                <i class="c-icon --dive" />
+                <span>Dives</span>
+            </a>
+        </li>
+        <li>
+            <a href={routes.Logout} use:link>
+                <i class="c-icon --signout" />
+                <span>Logout</span>
+            </a>
+        </li>
     {/if}
 </ul>

@@ -3,7 +3,7 @@
     import type { WrappedComponent } from 'svelte-spa-router';
     import Router from 'svelte-spa-router';
     import Dives from '../Pages/Dives/Dives.svelte';
-    import Dashboard from '../Pages/Dashboard/dashboard.svelte';
+    import Dashboard from '../Pages/Dashboard/Dashboard.svelte';
     import Login from '../Pages/Login/Login.svelte';
     import Logout from '../Pages/Logout/Logout.svelte';
     import NotFound from '../Pages/NotFound/NotFound.svelte';

@@ -1,0 +1,61 @@
+.c-icon {
+    @extend %fa-icon;
+    width: 16px;
+    height: 16px;
+
+    &.--dive {
+        @extend .fas;
+
+        &:before {
+            content: fa-content($fa-var-tint);
+        }
+    }
+
+    &.--dive-computer {
+        @extend .fas;
+
+        &:before {
+            content: fa-content($fa-var-desktop);
+        }
+    }
+
+    &.--dive-buddy {
+        @extend .fas;
+
+        &:before {
+            content: fa-content($fa-var-users);
+        }
+    }
+
+    &.--dive-tag {
+        @extend .fas;
+
+        &:before {
+            content: fa-content($fa-var-tags);
+        }
+    }
+
+    &.--dashboard {
+        @extend .fas;
+
+        &:before {
+            content: fa-content($fa-var-tachometer-alt);
+        }
+    }
+
+    &.--signout {
+        @extend .fas;
+
+        &:before {
+            content: fa-content($fa-var-sign-out-alt);
+        }
+    }
+
+    &.--signin {
+        @extend .fas;
+
+        &:before {
+            content: fa-content($fa-var-sign-in-alt);
+        }
+    }
+}
